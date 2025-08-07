@@ -1,42 +1,331 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Songwriting and production team">
-    <meta name="keywords" content="Music productions, songwriting, studio">
     <title>JALEX Music</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2,
+        h3 {
+            margin: 6px 0;
+        }
+
+        hr {
+            margin: 16px 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0b1a2b;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #0b1a2b;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 100;
+            position: relative;
+        }
+
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            right: 40px;
+            background-color: #0b1a2b;
+            padding: 20px;
+            border: 1px solid #fff;
+            border-radius: 6px;
+            z-index: 99;
+        }
+        .mobile-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 100px;
+            margin-right: 10px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .hero {
+            position: relative;
+            background: url('/jalexmusic/img/studio.jpg') no-repeat bottom center/cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-family: 'Montserrat', sans-serif;
+            max-width: 600px;
+        }
+
+        .button {
+            display: inline-block;
+            width: auto;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #ff7f32;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .section {
+            padding: 60px 40px;
+        }
+
+        .section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .service {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .service i {
+            font-size: 2rem;
+            color: #ff7f32;
+            margin-bottom: 10px;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: calc(33.333% - 20px);
+            height: 500px;
+            border-radius: 6px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #08121e;
+            color: #ccc;
+        }
+
+        @media(max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .section {
+                padding: 32px 40px;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+
+            header {
+                padding: 20px 16px;
+            }
+
+            .services {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .logo img {
+                height: 70px;
+                margin-right: 10px;
+            }
+
+            .gallery img {
+                width: 100%;
+                height: 250px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <section class="showcase">
-        <div class="contact">
+    <header>
+        <div class="logo">
+            <img src="/jalexmusic/img/logo.jpg" alt="JALEX Logo">
+        </div>
+        <nav class="desktop-nav">
+            <a href="#about">About</a>
+            <a href="#demo">Demo</a>
+            <a href="#gear">Gear</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#about">About</a>
+            <a href="#demo">Demo</a>
+            <a href="#gear">Gear</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div>
             <h1>JALEX Music</h1>
-            <p>Music productions and songwriting</p>
-            <p><a href="mailto:info@jalexmusic.com">contact us</a></p>
+            <p>We do music!</p>
+            <a class="button" href="mailto:info@jalexmusic.com">Contact us</a>
         </div>
     </section>
-</body>
-<style>
-    body{
-        background-color: #010b19;
-    }
-    .showcase{
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20vh;
-    }
-    .contact{
-        font-size: 24px;
-        color: #fff;
-        text-align: center;
-    }
-    .contact a{
-        color: #fff;
-    }
-    .berry{
-        color:  #ff9636;
-    }
 
-</style>
+    <section class="section" id="about">
+        <h2>About</h2>
+        <p>We produce music for labels and artists and help them elevate their sound. We're also launching our own independent label soon to sign and support new talent. Stay tuned for more updates!</p>
+    </section>
+
+    <section class="section" id="demo">
+        <h2>Demo</h2>
+        <p>We’re always open to discovering new talent. If you're an artist looking to collaborate or take the next step, feel free to send us your demos. We listen to everything that comes in.</p>
+        <a class="button" href="mailto:info@jalexmusic.com">Send demo</a>
+    </section>
+
+    <section class="section">
+        <h2>What we do</h2>
+        <div class="services">
+            <div class="service">
+                <i>🎵</i>
+                <h3>Production</h3>
+                <p>From demo to finished master</p>
+            </div>
+            <div class="service">
+                <i>✍️</i>
+                <h3>Song writing</h3>
+                <p>We help artists take their songwriting to the next level through production insights and creative guidance.</p>
+            </div>
+            <div class="service">
+                <i>🎤</i>
+                <h3>Artist development</h3>
+                <p>For emerging talents ready to take the next step</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="gallery">
+        <h2>Galleri</h2>
+        <div class="gallery">
+            <img src="/jalexmusic/img/performence.jpg" alt="Studiosession">
+            <img src="/jalexmusic/img/good-take.jpg" alt="Inspelning">
+            <img src="/jalexmusic/img/microphone.jpg" alt="mikrofon">
+        </div>
+    </section>
+    <section class="section" id="gear">
+        <h2>Equipments</h2>
+        <h3>Microphones</h3>
+        <ul>
+            <li>Nuemann U87 ai</li>
+            <li>AKG C414 XLII</li>
+            <li>Sure SM7B</li>
+            <li>Lewitt LCT 140 AIR</li>
+        </ul>
+        <hr>
+        <h3>Hardware</h3>
+        <ul>
+            <li>Neve shelford channel</li>
+            <li>SPL DeEsser MKII</li>
+            <li>Lin76 Compressor</li>
+            <li>Univarsal Audio Apollo twin</li>
+            <li>Tascam model 12</li>
+        </ul>
+        <hr>
+        <h3>Guitar</h3>
+        <ul>
+            <li>Martin</li>
+            <li>Gibson Hummingbird Vintage Pro</li>
+            <li>PRS</li>
+            <li>Fender Telecaster Custom 70s</li>
+            <li>Fender Stratocaster</li>
+            <li>Ephiphone les paul</li>
+        </ul>
+        <hr>
+        <h3>Bass</h3>
+        <ul>
+            <li>Fender Jazz bass</li>
+            <li>Fender Precision Bass</li>
+        </ul>
+        <hr>
+        <h3>Keyboard</h3>
+        <ul>
+            <li>Moog Matriarch</li>
+            <li>Yamaha DX7</li>
+        </ul>
+    </section>
+    <footer>
+        &copy; 2025 JALEX Music Productions. All rights reserved.
+    </footer>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mobileNav');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</body>
+
 </html>
