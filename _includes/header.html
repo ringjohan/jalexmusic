@@ -1,0 +1,43 @@
+<header>
+    <div class="logo">
+        <img src="../img/logo.jpg" alt="JALEX Logo">
+    </div>
+    <div class="nav-wrapper">
+    <!-- Språkväxling som egen navigation -->
+    <nav class="lang-nav" aria-label="Language selector">
+        <a href="/en/" lang="en">EN</a> | 
+        <a href="/sv/" lang="sv">SV</a>
+      </nav>
+    
+      <!-- Huvudnavigation -->
+      <nav class="desktop-nav" aria-label="Main site navigation">
+        <a href="#about">{{ page.nav_about }}</a>
+        <a href="#demo">{{ page.nav_demo }}</a>
+        <a href="#gear">{{ page.nav_gear }}</a>
+        <a href="#gallery">{{ page.nav_gallery }}</a>
+        <a href="#contact">{{ page.nav_contact }}</a>
+      </nav>
+    
+      <!-- Hamburger-meny för mobilt -->
+      <div class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle mobile menu" role="button" tabindex="0">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    
+      <!-- Mobilnavigation -->
+      <nav class="mobile-nav" id="mobileNav" aria-label="Mobile site navigation">
+        <div class="lang-wrapper">
+            <a href="/en/" lang="en">EN</a> | 
+            <a href="/sv/" lang="sv">SV</a>
+        </div>
+        <hr>
+        <a href="#about">{{ page.nav_about }}</a>
+        <a href="#demo">{{ page.nav_demo }}</a>
+        <a href="#gear">{{ page.nav_gear }}</a>
+        <a href="#gallery">{{ page.nav_gallery }}</a>
+        <a href="#contact">{{ page.nav_contact }}</a>
+      </nav>
+    </div>
+
+  </header>

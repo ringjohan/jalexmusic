@@ -1,0 +1,123 @@
+---
+layout: default
+---
+
+<section class="hero">
+    <div>
+        <h1>{{ page.hero_title }}</h1>
+        <p>{{ page.hero_tagline }}</p>
+        <a class="button" href="mailto:info@jalexmusic.com">{{ page.cta_contact }}</a>
+    </div>
+</section>
+
+<section class="section" id="about">
+    <h2>{{ page.about_title }}</h2>
+    <p>{{ page.about_text }}</p>
+</section>
+
+<section class="section" id="demo">
+    <h2>{{ page.demo_title }}</h2>
+    <p>{{ page.demo_text }}</p>
+    <a class="button" href="mailto:info@jalexmusic.com">{{ page.demo_cta }}</a>
+</section>
+
+<section class="section" id="services">
+    <h2>{{ page.services_title }}</h2>
+    <div class="services">
+        <div class="service">
+            <i>🎵</i>
+            <h3>{{ page.svc_prod_title }}</h3>
+            <p>{{ page.svc_prod_text }}</p>
+        </div>
+        <div class="service">
+            <i>✍️</i>
+            <h3>{{ page.svc_song_title }}</h3>
+            <p>{{ page.svc_song_text }}</p>
+        </div>
+        <div class="service">
+            <i>🎤</i>
+            <h3>{{ page.svc_dev_title }}</h3>
+            <p>{{ page.svc_dev_text }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="gallery">
+  <h2>{{ page.gallery_title }}</h2>
+  <div class="gallery">
+    <img src="/img/performence.jpg" alt="{{ page.gallery_alt1 }}">
+    <img src="/img/good-take.jpg"   alt="{{ page.gallery_alt2 }}">
+    <img src="/img/microphone.jpg"  alt="{{ page.gallery_alt3 }}">
+  </div>
+</section>
+
+<section class="section" id="gear">
+    <h2>{{ page.gear_title }}</h2>
+
+    <h3>{{ page.gear_mic_title }}</h3>
+    <ul>{% for item in page.gear_mics %}<li>{{ item }}</li>{% endfor %}</ul>
+    <hr>
+
+    <h3>{{ page.gear_hw_title }}</h3>
+    <ul>{% for item in page.gear_hardware %}<li>{{ item }}</li>{% endfor %}</ul>
+    <hr>
+
+    <h3>{{ page.gear_gtr_title }}</h3>
+    <ul>{% for item in page.gear_guitars %}<li>{{ item }}</li>{% endfor %}</ul>
+    <hr>
+
+    <h3>{{ page.gear_bass_title }}</h3>
+    <ul>{% for item in page.gear_bass %}<li>{{ item }}</li>{% endfor %}</ul>
+    <hr>
+
+    <h3>{{ page.gear_keys_title }}</h3>
+    <ul>{% for item in page.gear_keys %}<li>{{ item }}</li>{% endfor %}</ul>
+</section>
+
+<section class="section" id="contact">
+    <h2>{{ page.contact_title }}</h2>
+    <p>{{ page.contact_text }} <a href="mailto:info@jalexmusic.com">info@jalexmusic.com</a></p>
+</section>
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById('mobileNav');
+        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+    (function () {
+        try {
+            const saved = localStorage.getItem('langPref'); // 'en' | 'sv'
+            if (saved) return;
+
+            const prefersSV = (navigator.languages || [navigator.language || ''])
+                .some(l => l && l.toLowerCase().startsWith('sv'));
+
+            const onSV = location.pathname.startsWith('/sv/');
+            const onEN = location.pathname.startsWith('/en/') || location.pathname === '/';
+
+            if (prefersSV && onEN) {
+                const bar = document.createElement('div');
+                bar.style.position = 'fixed';
+                bar.style.inset = 'auto 0 0 0';
+                bar.style.padding = '12px';
+                bar.style.background = '#111';
+                bar.style.color = '#fff';
+                bar.style.textAlign = 'center';
+                bar.style.zIndex = '9999';
+                bar.innerHTML = `
+                    Vill du se sidan på svenska?
+                    <button id="go-sv" style="margin-left:8px">Ja, byt till svenska</button>
+                    <button id="stay-en" style="margin-left:8px">Nej tack</button>
+                `;
+                document.body.appendChild(bar);
+                document.getElementById('go-sv').onclick = () => {
+                    localStorage.setItem('langPref', 'sv');
+                    location.href = '/sv/';
+                };
+                document.getElementById('stay-en').onclick = () => {
+                    localStorage.setItem('langPref', 'en');
+                    bar.remove();
+                };
+            }
+        } catch (e) { }
+    })();
+</script>

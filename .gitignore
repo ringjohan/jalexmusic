@@ -1,0 +1,12 @@
+# Jekyll build output
+_site/
+
+# Jekyll caches
+.jekyll-cache/
+.sass-cache/
+
+# Bundler (lokalt installerade gems)
+vendor/
+
+# OS/editor
+.DS_Store

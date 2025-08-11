@@ -1,0 +1,6 @@
+title: JALEX Music
+description: Producer/label
+theme: null         # Vi kör egen layout
+markdown: kramdown
+plugins:
+  - jekyll-redirect-from

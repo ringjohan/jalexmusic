@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="alternate" href="{{ page.en_url }}" hreflang="en">
+  <link rel="alternate" href="{{ page.sv_url }}" hreflang="sv">
+  <link rel="alternate" href="{{ page.xdefault_url | default: page.en_url }}" hreflang="x-default">
+  <link rel="canonical" href="{{ page.canonical_url | default: page.en_url }}">
+
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  {% include header.html %}
+  <main>{{ content }}</main>
+  {% include footer.html %}
+</body>
+</html>
