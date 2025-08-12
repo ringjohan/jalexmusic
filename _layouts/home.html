@@ -3,7 +3,13 @@ layout: default
 ---
 
 <section class="hero">
-    <div>
+    <img
+    class="hero__img"
+    src="/img/studio.jpg"
+    alt=""
+    width="1920" height="1080"
+    fetchpriority="high">
+    <div class="hero__content">
         <h1>{{ page.hero_title }}</h1>
         <p>{{ page.hero_tagline }}</p>
         <a class="button" href="mailto:info@jalexmusic.com">{{ page.cta_contact }}</a>
@@ -45,9 +51,9 @@ layout: default
 <section class="section" id="gallery">
   <h2>{{ page.gallery_title }}</h2>
   <div class="gallery">
-    <img src="/img/performence.jpg" alt="{{ page.gallery_alt1 }}">
-    <img src="/img/good-take.jpg"   alt="{{ page.gallery_alt2 }}">
-    <img src="/img/microphone.jpg"  alt="{{ page.gallery_alt3 }}">
+    <img src="/img/performence.jpg" alt="{{ page.gallery_alt1 }}" width="1600" height="1067" loading="lazy" decoding="async">
+    <img src="/img/good-take.jpg"   alt="{{ page.gallery_alt2 }}" width="1600" height="1067" loading="lazy" decoding="async">
+    <img src="/img/microphone.jpg"  alt="{{ page.gallery_alt3 }}" width="1600" height="1067" loading="lazy" decoding="async">
   </div>
 </section>
 

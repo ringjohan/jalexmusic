@@ -24,7 +24,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 8px 16px;
     background-color: #0b1a2b;
 }
 
@@ -40,14 +40,14 @@ header {
     width: 25px;
     height: 3px;
     background-color: white;
-    margin: 4px 0;
+    margin: 2px 0;
 }
 
 .mobile-nav {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 70px;
+    top: 40px;
     right: 40px;
     background-color: #0b1a2b;
     padding: 20px;
@@ -65,11 +65,11 @@ header {
 }
 .nav-wrapper{
     display: flex;
-    align-items: flex-end;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .lang-nav{
-    margin-bottom: 12px;
+    margin-left: 24px;
     gap: 16px;
     border: 1px solid #fff;
     padding: 8px;
@@ -85,8 +85,7 @@ header {
 }
 
 .logo img {
-    height: 100px;
-    margin-right: 10px;
+    height: 60px;
 }
 
 nav {
@@ -102,12 +101,21 @@ nav a {
 
 .hero {
     position: relative;
-    background: url('../img/studio.jpg') no-repeat bottom center/cover;
-    height: 600px;
-    display: flex;
+    overflow: hidden;
+    height: clamp(360px, 60vh, 820px); /* responsiv, förutsägbar höjd */
+    display: grid;
     align-items: center;
     padding: 0 40px;
-}
+  }
+  .hero__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* beskär, förvränger inte */
+    object-position: center;
+  }
+  .hero__content { position: relative; z-index: 1; color: #fff; }
 
 .hero h1 {
     font-size: 2.5rem;
@@ -123,7 +131,7 @@ nav a {
     font-size: 1rem;
     background-color: #ff7f32;
     border: none;
-    color: white;
+    color: black;
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
@@ -172,16 +180,18 @@ nav a {
 }
 
 .gallery {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.gallery img {
-    width: calc(33.333% - 20px);
-    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .gallery img {
+    width: 100%;
+    height: 400px;
+    aspect-ratio: 3 / 2; /* välj t.ex. 3:2 eller 4:3 */
+    object-fit: cover;   /* beskär utan att förvränga */
     border-radius: 6px;
-}
+    display: block;
+  }
 
 footer {
     text-align: center;
@@ -204,18 +214,13 @@ footer {
         display: flex;
     }
 
-    header {
-        padding: 20px 16px;
-    }
-
     .services {
         flex-direction: column;
         gap: 20px;
     }
 
     .logo img {
-        height: 70px;
-        margin-right: 10px;
+        height: 42px;
     }
 
     .gallery img {

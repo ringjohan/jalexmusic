@@ -84,7 +84,12 @@ If you get **permission errors** when installing gems:
    bundle config set --local path 'vendor/bundle'
    bundle install
    ```
+If you **The terminal process "/bin/zsh '-l'" terminated with exit code: 127.**  when run bundle exec jekyll serve --livereload and Jekyll is missing. 
 
+rm -f "injected gems"
+rm -f "injected gems" Gemfile.lock
+bundle install
+bundle exec jekyll serve --livereload
 ---
 
 ## 6️⃣ Windows Notes
