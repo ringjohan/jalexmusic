@@ -1,43 +1,28 @@
 <header>
-    <div class="logo">
-        <img src="../img/logo.jpg" alt="JALEX Logo">
-    </div>
-    <div class="nav-wrapper">
-      <!-- Huvudnavigation -->
-      <nav class="desktop-nav" aria-label="Main site navigation">
-        <a href="#about">{{ page.nav_about }}</a>
-        <a href="#demo">{{ page.nav_demo }}</a>
-        <a href="#gear">{{ page.nav_gear }}</a>
-        <a href="#gallery">{{ page.nav_gallery }}</a>
-        <a href="#contact">{{ page.nav_contact }}</a>
-      </nav>
-    
-      <!-- Hamburger-meny för mobilt -->
-      <div class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle mobile menu" role="button" tabindex="0">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    
-      <!-- Mobilnavigation -->
-      <nav class="mobile-nav" id="mobileNav" aria-label="Mobile site navigation">
-        <div class="lang-wrapper">
-            <a href="/en/" lang="en">EN</a> | 
-            <a href="/sv/" lang="sv">SV</a>
-        </div>
-        <hr>
-        <a href="#about">{{ page.nav_about }}</a>
-        <a href="#demo">{{ page.nav_demo }}</a>
-        <a href="#gear">{{ page.nav_gear }}</a>
-        <a href="#gallery">{{ page.nav_gallery }}</a>
-        <a href="#contact">{{ page.nav_contact }}</a>
-      </nav>
-          <!-- Språkväxling som egen navigation -->
-    <nav class="lang-nav" aria-label="Language selector">
-      <a href="/en/" lang="en">EN</a> | 
-      <a href="/sv/" lang="sv">SV</a>
-    </nav>
-  
-    </div>
 
+
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"><img src="/img/jalex_header_logo.png" loading="lazy" /></div>
+      </div>
+      <div class="lang-wrapper">
+        <a href="/en/" lang="en">EN</a> |
+        <a href="/sv/" lang="sv">SV</a>
+      </div>
+    </div>
+  </nav>
+  <button class="burger-fixed" aria-label="Open menu" aria-expanded="false">
+    MENU <span class="burger-icon">☰</span>
+  </button>
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <img class="center-logo" src="/img/jalex_center_logo.png" />
+      <div class="eyebrow">{{ page.hero_eyebrow }}</div>
+      <h1>{{ page.hero_title }}</h1>
+      <p class="tagline">{{ page.hero_tagline }}</p>
+      <div class="cta">
+        <a class="btn" href="mailto:info@jalexmusic.com">{{ page.cta_contact }}</a>
+      </div>
+    </div>
   </header>
