@@ -13,6 +13,8 @@ nav_gear: "Vår utrustning"
 nav_services: "Det här gör vi"
 nav_gallery: "Bildgalleri"
 nav_contact: "Kontakta oss"
+nav_swedish: "På svenska"
+nav_english: "In english"
 
 hero_eyebrow: "Välkommen till"
 hero_title: "JALEX Music"

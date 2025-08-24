@@ -1,4 +1,11 @@
+const swedishLangLink = document.getElementById('swedish-lang');
+const englishLangLink = document.getElementById('english-lang');
 
+if (window.location.href.includes('/sv')) {
+  swedishLangLink.classList.add('hidden');
+} else {
+  englishLangLink.classList.add('hidden');
+}
 const nav = document.querySelector('.nav');
 const fabBurger = document.querySelector('.burger-fixed');
 

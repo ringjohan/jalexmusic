@@ -70,6 +70,9 @@ img {
     margin-right: 120px;
   }
 
+  @media (max-width:560px) {
+    display: none;
+  }
 }
 
 .nav.show {
@@ -486,7 +489,19 @@ footer {
 }
 
 .drawer a {
-  display: block;
+  display: flex;
   padding: 14px 6px;
   border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+
+.drawer a img {
+  margin-right: .5rem;
+  filter: brightness(0) invert(1);
+  width: 1rem;
+  max-width: 1rem;
+}
+
+#english-lang.hidden,
+#swedish-lang.hidden {
+  display: none;
 }
