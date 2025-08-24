@@ -53,8 +53,6 @@ gear_hardware:
   - "Neve Shelford Channel"
   - "RME Fireface UFX III"
   - "SPL DeEsser MKII"
-  - "LIN76 Compressor"
-  - "Universal Audio Apollo Twin"
 gear_gtr_title: "Guitars"
 gear_guitars:
   - "Martin"

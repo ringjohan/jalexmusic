@@ -9,6 +9,7 @@
   --link: #e7ddff;
   --shadow: 0 10px 30px rgba(0, 0, 0, .4);
   --radius: 18px;
+  --white: #ffffff
 }
 
 * {
@@ -132,7 +133,6 @@ img {
   /* generous hit area */
   padding: 0;
   border: 0;
-  border-radius: 12px;
   cursor: pointer;
   color: #fff;
   display: flex;
@@ -254,7 +254,6 @@ img {
   font-weight: 800;
   letter-spacing: .03em;
   padding: 14px 22px;
-  border-radius: 12px;
   cursor: pointer;
   text-decoration: none;
 }
@@ -286,7 +285,7 @@ h2.section-title {
 }
 
 .lead {
-  color: var(--muted);
+  color: var(--white);
   max-width: 800px
 }
 
@@ -310,9 +309,7 @@ h2.section-title {
 .card {
   background: rgba(255, 255, 255, .04);
   border: 1px solid rgba(255, 255, 255, .06);
-  border-radius: var(--radius);
   padding: 24px;
-  box-shadow: var(--shadow)
 }
 
 /* SERVICES */
@@ -337,7 +334,7 @@ h2.section-title {
 }
 
 .service p {
-  color: var(--muted)
+  color: var(--white)
 }
 
 .service .icon {
@@ -346,7 +343,6 @@ h2.section-title {
   top: 18px;
   width: 42px;
   height: 42px;
-  border-radius: 12px;
   opacity: .85;
   display: grid;
   place-items: center;
@@ -371,7 +367,6 @@ h2.section-title {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 12px;
 }
 
 .contact {
@@ -386,7 +381,6 @@ h2.section-title {
 
 .contact .mini {
   font-size: .95rem;
-  color: var(--muted)
 }
 
 /* GEAR */
@@ -420,7 +414,7 @@ h2.section-title {
   list-style: none;
   margin: 0;
   padding: 0;
-  color: var(--muted);
+  color: var(--white);
   line-height: 1.9
 }
 
