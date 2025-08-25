@@ -2,14 +2,13 @@
   --bg: #0c0718;
   --panel: #1a122b;
   --panel-2: #150c1e;
-  --text: #efe9ff;
+  --text: #ffffff;
   --muted: #bdb3d9;
   --primary: #480d87;
   --secondary: #ff39b3;
-  --link: #e7ddff;
-  --shadow: 0 10px 30px rgba(0, 0, 0, .4);
-  --radius: 18px;
-  --white: #ffffff
+  --link: #ffffff;
+  --linkhover: #140129;
+  --radius: 4px;
 }
 
 * {
@@ -23,13 +22,18 @@ body {
 
 body {
   margin: 0;
-  font-family: Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: var(--text);
   background: radial-gradient(1200px 500px at 80% -50%, rgba(177, 92, 255, .25), transparent 60%),
     radial-gradient(900px 500px at 10% -60%, rgba(255, 57, 179, .2), transparent 50%),
     var(--bg);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 3rem;
 }
 
 a {
@@ -40,6 +44,14 @@ a {
 
 a:hover {
   text-decoration: none;
+  outline: 0;
+}
+
+a:focus-visible {
+  text-decoration: none;
+  color: var(--linkhover);
+  background: var(--text);
+  outline: 0;
 }
 
 img {
@@ -47,7 +59,6 @@ img {
   display: block;
 }
 
-/* NAVBAR — appears on scroll; no menu links shown on desktop or mobile */
 .nav {
   position: fixed;
   top: 0;
@@ -130,8 +141,7 @@ img {
   place-items: center;
   min-width: 44px;
   min-height: 44px;
-  /* generous hit area */
-  padding: 0;
+  padding: .25rem;
   border: 0;
   cursor: pointer;
   color: #fff;
@@ -176,7 +186,7 @@ img {
   inset: 0;
   z-index: -2;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgb(142 0 255 / 44%) 100%),
-    url(/img/studio-purple_mobile.jpg) left/cover no-repeat;
+    url(/img/studio-purple_mobile.webp) left/cover no-repeat;
   margin-top: -300px;
   transform: translateY(var(--parallax)) scale(1);
   will-change: transform;
@@ -185,7 +195,7 @@ img {
   @media (min-width:500px) {
     background: linear-gradient(to bottom, rgba(10, 6, 20, .1), rgba(10, 6, 20, .85) 65%, var(--bg)),
       radial-gradient(1200px 600px at 60% -10%, rgba(177, 92, 255, .38), transparent 60%),
-      url(/img/studio-purple.jpg) center/cover no-repeat;
+      url(/img/studio-purple.webp) center/cover no-repeat;
   }
 }
 
@@ -235,14 +245,12 @@ img {
 
 .tagline {
   max-width: 680px;
-  color: #e4dfff;
-  opacity: .95
 }
 
 .cta {
   margin-top: 28px;
   display: flex;
-  gap: 14px;
+  gap: 1rem;
   flex-wrap: wrap
 }
 
@@ -255,12 +263,27 @@ img {
   letter-spacing: .03em;
   padding: 14px 22px;
   cursor: pointer;
+  display: block;
+  width: fit-content;
+  border-radius: var(--radius);
   text-decoration: none;
 }
 
 .btn:hover {
   background-color: transparent;
   outline: 2px solid white;
+}
+
+.btn:focus-visible {
+  background-color: white;
+  outline: 2px solid var(--linkhover);
+  color: var(--linkhover);
+}
+
+.btn:focus-visible:hover {
+  background-color: white;
+  outline: 2px solid var(--linkhover);
+  color: var(--linkhover);
 }
 
 .btn.secondary {
@@ -279,9 +302,10 @@ section {
 }
 
 h2.section-title {
-  font-size: clamp(1.4rem, 3.2vw, 2.1rem);
+  font-size: 3rem;
+  line-height: 4rem;
   letter-spacing: .03em;
-  margin: 0 0 18px
+  margin: 0 0 1rem;
 }
 
 .lead {
@@ -296,7 +320,7 @@ h2.section-title {
 .split {
   display: grid;
   grid-template-columns: 1.1fr .9fr;
-  gap: 36px;
+  gap: 2rem;
   align-items: center
 }
 
@@ -310,13 +334,18 @@ h2.section-title {
   background: rgba(255, 255, 255, .04);
   border: 1px solid rgba(255, 255, 255, .06);
   padding: 24px;
+  border-radius: var(--radius);
+}
+
+.card h2.section-title {
+  margin: 0;
 }
 
 /* SERVICES */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px
+  gap: 1.5rem;
 }
 
 @media (max-width:900px) {
@@ -352,7 +381,7 @@ h2.section-title {
 
 .gallery-container {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
   justify-content: center;
 
@@ -375,7 +404,6 @@ h2.section-title {
 
 .contact .card {
   display: grid;
-  gap: 16px;
   place-items: start
 }
 
@@ -391,7 +419,7 @@ h2.section-title {
 .gear .columns {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 22px
+  gap: 1.5rem;
 }
 
 @media (max-width:1000px) {
@@ -414,14 +442,12 @@ h2.section-title {
   list-style: none;
   margin: 0;
   padding: 0;
-  color: var(--white);
   line-height: 1.9
 }
 
 /* FOOTER */
 footer {
   padding: 46px 22px;
-  color: #cdbdf1;
   text-align: center;
   background: transparent
 }
