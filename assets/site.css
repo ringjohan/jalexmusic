@@ -193,7 +193,7 @@ img {
   backface-visibility: hidden;
 
   @media (min-width:500px) {
-    background: url(/img/studio-purple.webp) left/cover no-repeat;
+    background: url(/img/studio-purple.webp) center/cover no-repeat;
   }
 }
 
