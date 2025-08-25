@@ -193,8 +193,7 @@ img {
   backface-visibility: hidden;
 
   @media (min-width:500px) {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgb(142 0 255 / 44%) 100%),
-      url(/img/studio-purple.webp) left/cover no-repeat;
+    background: url(/img/studio-purple.webp) left/cover no-repeat;
   }
 }
 
