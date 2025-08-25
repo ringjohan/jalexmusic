@@ -169,7 +169,7 @@ img {
 .hero {
   position: relative;
   min-height: 80vh;
-  display: grid;
+  display: flex;
   place-items: center;
   isolation: isolate;
   overflow: hidden;
@@ -216,6 +216,9 @@ img {
   max-width: 1100px;
   margin: 0 auto;
   padding: 4.25rem 1rem 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media (min-width:500px) {
     padding: 80px 22px 70px;
@@ -245,6 +248,8 @@ img {
   margin: .4rem 0 1rem;
   line-height: 1.12;
   letter-spacing: .02em;
+  text-transform: uppercase;
+  text-align: center;
   font-weight: 900;
   text-shadow: 0 2px 35px rgba(0, 0, 0, .55)
 }
@@ -317,8 +322,9 @@ section {
 }
 
 h2.section-title {
-  font-size: 3rem;
-  line-height: 4rem;
+  font-size: 2.5rem;
+  line-height: 2.8rem;
+  text-transform: uppercase;
   letter-spacing: .03em;
   margin: 0 0 1rem;
 }
