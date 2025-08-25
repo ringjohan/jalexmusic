@@ -17,7 +17,7 @@ nav_swedish: "På svenska"
 nav_english: "In english"
 
 hero_eyebrow: "Välkommen till"
-hero_title: "JALEX Music"
+hero_title: "Ett hem för artister och låtskrivare"
 hero_tagline: "Ett hem för artister och låtskrivare."
 cta_contact: "Kontakta oss"
 
