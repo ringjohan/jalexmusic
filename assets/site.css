@@ -299,7 +299,11 @@ img {
 }
 
 section {
-  padding: 96px 22px
+  padding: 2rem 1rem;
+
+  @media (min-width:500px) {
+    padding: 6rem 1.5rem;
+  }
 }
 
 .container {
