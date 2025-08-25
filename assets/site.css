@@ -185,15 +185,16 @@ img {
   position: absolute;
   inset: 0;
   z-index: -2;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgb(142 0 255 / 44%) 100%),
-    url(/img/studio-purple_mobile.webp) left/cover no-repeat;
+  background: url(/img/studio-purple.webp) center/cover no-repeat;
+
   margin-top: -300px;
   transform: translateY(var(--parallax)) scale(1);
   will-change: transform;
   backface-visibility: hidden;
 
   @media (min-width:500px) {
-    background: url(/img/studio-purple.webp) center/cover no-repeat;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgb(142 0 255 / 44%) 100%),
+      url(/img/studio-purple_mobile.webp) left/cover no-repeat;
   }
 }
 
@@ -203,7 +204,7 @@ img {
   left: 0;
   right: 0;
   bottom: -1px;
-  height: 100px;
+  height: 140px;
   z-index: 1;
   background: url(/img/topSection.png) bottom left / auto 76px repeat-x, linear-gradient(to top, rgba(142, 0, 255, 0.6) 0%, rgba(142, 0, 255, 0.2) 60%, rgba(142, 0, 255, 0) 100%);
 
