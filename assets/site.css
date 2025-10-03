@@ -260,6 +260,7 @@ img {
 
 .cta {
   margin-top: 28px;
+  margin-bottom: 3rem;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap
